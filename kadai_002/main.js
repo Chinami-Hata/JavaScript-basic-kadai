@@ -77,11 +77,14 @@ const rankCheck = score => {
 
 const gameOver = id => {
     clearInterval(id);
-    const result = confirm(rankCheck(score));
-        
-    if (result == true) {
-        window.location.reload();
-    }
+    untypedfield.textContent = 'タイムアップ！';
+    setTimeout (() => {
+        const result = confirm(rankCheck(score));
+        if (result == true) {
+            window.location.reload();
+        }
+    },100)
+
 };
 
 const timer = () => {
